@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>blank react-redux</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      #interface {
+        display: grid;
+        grid-template-columns: 50% 50%;
+      }
+      #options > li {
+        cursor: pointer;
+      }
+      .active {
+        background-color: tomato;
+      }
+      .clickable {
+        cursor: pointer;
+      }
+      .no-select {
+        user-select: none; /* supported by Chrome and Opera */
+         -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+         -ms-user-select: none; /* Internet Explorer/Edge */
+      }
+    </style>
+  </head>
+  <body>
+    
+      <div id="main">
+        <!-- the hello world app will be in here! -->
+      </div>
+    
+      <!-- glitch button and style -->
+      <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+      <script src="https://button.glitch.me/button.js" data-style="glitch"></script>
+    
+      <!-- bundle all the scripts! thanks to webpack -->
+      <script type="text/javascript" src="/bundle.js"></script>
+  </body>
+</html>
