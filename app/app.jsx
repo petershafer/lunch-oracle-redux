@@ -1,7 +1,7 @@
 const React = require("react");
 const { render } = require("react-dom");
 
-
+import './style.scss';
 
 // redux
 const { createStore, applyMiddleware } = require("redux");
