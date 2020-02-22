@@ -22,6 +22,9 @@ const DarkMode = (props) => {
     var x = window.matchMedia("(prefers-color-scheme: dark)")
     setColorScheme(x) // Call listener function at run time
     x.addListener(setColorScheme) // Attach listener function on state changes
+    return () => {
+      x.removeListener(setColorScheme)
+    }
   });
   return (
     <div className={ mode === light ? lightTheme : darkTheme }>
