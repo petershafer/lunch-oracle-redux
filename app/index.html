@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Lunch Oracle Redux</title>
+    <meta name="description" content="A cool thing made with Glitch">
+    <link id="favicon" rel="icon" href="https://glitch.com/edit/favicon-app.ico" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+      body {
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      #app {
+        padding: 25px;
+        min-height: 100vh;
+      }
+      .dark {
+        background-color: black;
+        color: white;
+      }
+      button:active {
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+      #interface {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        max-width: 640px;
+      }
+      .active button {
+        background-color: #b3b3b3;
+        box-shadow: none;
+        position: relative;
+        top: 2px;
+        left: 2px;
+      }
+      .clickable {
+        cursor: pointer;
+      }
+      .no-select {
+        user-select: none; /* supported by Chrome and Opera */
+         -webkit-user-select: none; /* Safari */
+         -khtml-user-select: none; /* Konqueror HTML */
+         -moz-user-select: none; /* Firefox */
+         -ms-user-select: none; /* Internet Explorer/Edge */
+      }
+      .lds-facebook {
+        display: inline-block;
+        position: relative;
+        width: 20px;
+        height: 20px;
+      }
+      .lds-facebook div {
+        display: inline-block;
+        position: absolute;
+        left: 2px;
+        width: 4px;
+        background: #fff;
+        animation: lds-facebook 1.2s cubic-bezier(0, 0.5, 0.5, 1) infinite;
+        background-color: black;
+      }
+      .lds-facebook div:nth-child(1) {
+        left: 2px;
+        animation-delay: -0.24s;
+        background-color: #373fff;
+        opacity: 1;
+      }
+      .lds-facebook div:nth-child(2) {
+        left: 8px;
+        animation-delay: -0.12s;
+        background-color: #373fff;
+        opacity: 0.5;
+      }
+      .lds-facebook div:nth-child(3) {
+        left: 14px;
+        animation-delay: 0;
+        background-color: #373fff;
+        opacity: 0.25;
+      }
+      @keyframes lds-facebook {
+        0% {
+          top: 2px;
+          height: 16px;
+        }
+        50%, 100% {
+          top: 6px;
+          height: 8px;
+        }
+      }
+    </style>
+    <link rel="stylesheet" href="//button.glitch.me/css/glitch.css">
+  </head>
+  <body>
+    
+      <div id="main">
+        <!-- the app will be in here! -->
+      </div>
+    
+      <!-- glitch button and style -->
+      <div class="glitchButton" style="position:fixed;top:20px;right:20px;"></div>
+      <script src="https://button.glitch.me/button.js" data-style="glitch"></script>
+    
+      <!-- bundle all the scripts! thanks to webpack -->
+      <script type="text/javascript" src="/bundle.js"></script>
+  </body>
+</html>

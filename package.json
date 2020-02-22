@@ -1,0 +1,45 @@
+{
+  "//1": "describes your app and its dependencies",
+  "//2": "https://docs.npmjs.com/files/package.json",
+  "//3": "updating this file will download and update your packages",
+  "name": "lunch-oracle-redux",
+  "version": "0.0.1",
+  "description": "A version of Lunch Oracle that uses Redux for the data layer",
+  "main": "server.js",
+  "scripts": {
+    "build": "webpack",
+    "start": "webpack && node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.4",
+    "jsx-loader": "^0.13.2",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "webpack": "^4.30.0",
+    "react-router-dom": "^5.0.0",
+    "react-redux": "^7.0.2",
+    "redux": "^4.0.1",
+    "webpack-cli": "^3.3.0",
+    "lodash": "^4.17.15",
+    "moment": "^2.24.0",
+    "redux-thunk": "^2.3.0",
+    "axios": "^0.19.1",
+    "redux-devtools-extension": "^2.13.8",
+    "babel-loader": "^8.0.5",
+    "@babel/core": "^7.8.4",
+    "@babel/preset-env": "^7.8.4",
+    "@babel/preset-react": "^7.8.3"
+  },
+  "engines": {
+    "node": "8.x"
+  },
+  "repository": {
+    "url": "https://glitch.com/edit/#!/starter-react-redux"
+  },
+  "license": "MIT",
+  "keywords": [
+    "node",
+    "glitch",
+    "express"
+  ]
+}
