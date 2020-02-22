@@ -11,7 +11,6 @@ const setMode = function(mode) {
 };
 
 const isDark = function(darkMode) {
-  console.log(darkMode);
   return {
     type: ISDARK,
     darkMode

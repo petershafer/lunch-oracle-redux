@@ -16,7 +16,7 @@ const App = function(props) {
   const { mode, isDark } = props;
   return (
     <BrowserRouter>
-      <DarkMode override={mode} handleMode={(mode) => { isDark(mode) }}>
+      <DarkMode preferDark={mode === true} preferLight={mode === false} handleMode={(mode) => { isDark(mode) }}>
         <div id="app">
           <Route exact path="/" component={Lunch} />
           <Route path="/lunch" component={Lunch} />
