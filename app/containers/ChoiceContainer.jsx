@@ -1,30 +1,14 @@
 /* container which maps state and dispatches to its props 
   so it can be referenced in the VoteButtons component */
 
+const { bindActionCreators } = require('redux');
 const { connect } = require('react-redux');
-const actions = require('../actions');
+const { choices: { creators: { loadChoices } } } = require('../actions');
 const Choices = require('../components/Choices');
-const { REQUESTS: { SUCCESSFUL, FETCHING, FAILED } } = require('../constants');
 
-const mapStateToProps = function({ lunchReducer: { selectedOptions, choices, choices_status } }) {
-  return {
-    selectedOptions,
-    choices,
-    choices_status
-  }
-}
+const mapStateToProps = ({ lunchReducer }) => ({ ...lunchReducer });
 
-const mapDispatchToProps = function(dispatch) {
-  return {
-    loadChoices: function(data=null, status=FETCHING) {
-      fetch('api/choices')
-        .then((response) => response.json())
-        .then(data => dispatch(actions.choices.loadChoices(data, SUCCESSFUL)))
-        .catch(() => dispatch(actions.choices.loadChoices(null, FAILED)));
-      return dispatch(actions.choices.loadChoices(data, status));
-    }
-  }
-}
+const mapDispatchToProps = dispatch => bindActionCreators({ loadChoices }, dispatch);
 
 const ChoiceContainer = connect(
   mapStateToProps,
