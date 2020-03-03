@@ -6,26 +6,37 @@ const dark = true;
 
 const DarkMode = (props) => {
   const {
-    override = false,
     lightTheme = 'light',
     darkTheme = 'dark',
-    children,
+    children = null,
     handleMode = () => {},
+    preferDark = false,
+    preferLight = false,
   } = props;
   const [mode, setMode] = useState(light);
   function setColorScheme(x) {
-    const isDark = (x.matches && !override) || (!x.matches && override);
+    const usingDarkMode = x.matches;
+    const usingLightMode = !x.matches;
+    const prefersDark = preferDark && !preferLight;
+    const prefersLight = preferLight && !preferDark;
+    const isDark = (usingDarkMode || prefersDark) && !prefersLight;
     setMode(isDark);
-    handleMode(isDark);
   }
   useEffect(() => {
     var x = window.matchMedia("(prefers-color-scheme: dark)")
     setColorScheme(x) // Call listener function at run time
-    x.addListener(setColorScheme) // Attach listener function on state changes
+    handleMode(x.matches);
+    x.addListener((...args) => {
+      handleMode(x.matches);
+      setColorScheme(...args);
+    }) // Attach listener function on state changes
+    return () => {
+      x.removeListener(setColorScheme)
+    }
   });
   return (
     <div className={ mode === light ? lightTheme : darkTheme }>
-      { children || null }
+      { children }
     </div>
   );
 };

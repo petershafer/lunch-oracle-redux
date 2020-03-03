@@ -22,7 +22,21 @@ module.exports = {
             presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
-      }
+      },
+      {
+        test: /\.less$/,
+        use: [
+          {
+            loader: "style-loader"
+          },
+          {
+            loader: "css-loader",
+          },
+          {
+            loader: "less-loader"
+          }
+        ]
+      },
     ],
   },
 };

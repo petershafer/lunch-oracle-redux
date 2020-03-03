@@ -1,6 +1,6 @@
 const { core: {  types: { SETMODE, ISDARK } }} = require('../actions');
 
-function coreReducer(state = { mode: false, darkMode: false }, action) {
+function coreReducer(state = { mode: null, darkMode: false }, action) {
   switch (action.type) {
     case SETMODE: 
       return Object.assign({}, state, {
